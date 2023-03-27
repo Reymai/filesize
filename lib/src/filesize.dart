@@ -1,12 +1,14 @@
 /// A method returns a human readable string representing a file _size
-String filesize(dynamic size, [int round = 2]) {
+String filesize(dynamic size, [int round = 2, int divider = 1024]) {
   /** 
    * [size] can be passed as number or as string
    *
    * the optional parameter [round] specifies the number 
    * of digits after comma/point (default is 2)
+   *
+   * the optional parameter [divider] specifies the number
+   * of bytes in a kilobyte (default is 1024)
    */
-  var divider = 1024;
   int _size;
   try {
     _size = int.parse(size.toString());
